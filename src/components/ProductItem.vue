@@ -12,7 +12,7 @@ const props = defineProps(
 
 const imgPath = computed(() => new URL(props.product.cover, import.meta.url).href);
 
-const { format, currency } = useCurrency({currency: '€'});
+const { format } = useCurrency({currency: '€'});
 
 const euroPrice = format(props.product.price, '€');
 const euroPriceDiscounted = format(props.product.discountedPrice, '€');

@@ -13,3 +13,7 @@ body {
 .card {
   @apply bg-base-100 shadow-xl w-96;
 }
+
+.router-link-active {
+  @apply btn-active;
+}
