@@ -1,5 +1,8 @@
 <script setup>
+import { useCurrency } from '@/composables/useCurrency'
 import { computed } from 'vue'
+
+const { format, currency } = useCurrency({ currency: '€' })
 
 const props = defineProps({
   product: {
@@ -8,7 +11,9 @@ const props = defineProps({
 })
 
 const imgPath = computed(() => new URL(props.product.cover, import.meta.url).href)
-const addDevise = computed(() => `${props.product.price} €`)
+
+const price = format(props.product.price)
+const discountedPrice = format(props.product.discountedPrice)
 </script>
 <template>
   <div class="card">
@@ -22,9 +27,9 @@ const addDevise = computed(() => `${props.product.price} €`)
           'text-4xl': !props.product.discountedPrice
         }"
       >
-        {{ addDevise }}
+        {{ price }}
       </p>
-      <p v-if="product.discountedPrice">{{ product.discountedPrice }} €</p>
+      <p v-if="product.discountedPrice">{{ discountedPrice }}</p>
       <div class="card-actions" :disabled="!props.product.price">
         <button class="btn btn-primary">Commander</button>
       </div>
