@@ -8,8 +8,7 @@ const props = defineProps({
 })
 
 const imgPath = computed(() => new URL(props.product.cover, import.meta.url).href)
-
-const addDevise = computed((arg) => `${arg} €`)
+const addDevise = computed(() => `${props.product.price} €`)
 </script>
 <template>
   <div class="card">
@@ -23,11 +22,9 @@ const addDevise = computed((arg) => `${arg} €`)
           'text-4xl': !props.product.discountedPrice
         }"
       >
-        {{ addDevise(product.price) }}
+        {{ addDevise }}
       </p>
-      <p v-if="product.discountedPrice">
-        {{ addDevise(product.discountedPrice) }}
-      </p>
+      <p v-if="product.discountedPrice">{{ product.discountedPrice }} €</p>
       <div class="card-actions" :disabled="!props.product.price">
         <button class="btn btn-primary">Commander</button>
       </div>
