@@ -1,8 +1,8 @@
 <script setup>
 import { ref } from 'vue'
-import ProductItem from './components/ProductItem.vue'
+import NavBar from './components/NavBar.vue'
 
-const products = ref([
+const productsData = ref([
   {
     name: 'Canapé jaune',
     cover: './../assets/canape-jaune.png',
@@ -27,8 +27,9 @@ const products = ref([
 
 <template>
   <main>
-    <section class="list">
-      <ProductItem v-for="product in products" :product="product" :key="product"></ProductItem>
-    </section>
+    <NavBar></NavBar>
+    <RouterView v-slot="{ Component }">
+      <component :is="Component" :products="productsData" />
+    </RouterView>
   </main>
 </template>
