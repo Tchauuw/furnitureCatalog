@@ -31,7 +31,10 @@ const discountedPrice = format(props.product.discountedPrice)
       </p>
       <p v-if="product.discountedPrice">{{ discountedPrice }}</p>
       <div class="card-actions" :disabled="!props.product.price">
-        <button class="btn btn-primary">Commander</button>
+        <!-- <button class="btn btn-primary">Commander</button> -->
+        <RouterLink :to="{ path: `/product/${props.product.price}` }" class="btn btn-primary"
+          >Commander</RouterLink
+        >
       </div>
     </div>
   </div>

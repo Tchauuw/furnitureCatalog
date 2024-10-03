@@ -2,7 +2,7 @@
 import { router } from '@/router'
 import { useRouter } from 'vue-router'
 
-const { push } = useRouter()
+const { push, params } = useRouter()
 
 const goToHome = () => {
   router.push({ name: 'home' })
