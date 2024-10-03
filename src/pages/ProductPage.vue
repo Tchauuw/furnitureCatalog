@@ -16,6 +16,7 @@ const price = format(props.product.price)
 const discountedPrice = format(props.product.discountedPrice)
 </script>
 <template>
+  <h1>ProductPage</h1>
   <div class="card">
     <img :src="imgPath" :alt="props.product.name" />
     <div class="card-body">

@@ -4,12 +4,14 @@ import NavBar from './components/NavBar.vue'
 
 const productsData = ref([
   {
+    id: 0,
     name: 'Canapé jaune',
     cover: './../assets/canape-jaune.png',
     details: 'Livraison sous 2 semaines',
     price: 799
   },
   {
+    id: 1,
     name: 'Chaise bois',
     cover: './../assets/chaise-bois.png',
     details: 'Livraison sous 3 jours',
@@ -17,6 +19,7 @@ const productsData = ref([
     discountedPrice: 99
   },
   {
+    id: 2,
     name: 'Fauteuil jaune',
     cover: './../assets/fauteuil-jaune.png',
     details: 'Rupture de stock',
